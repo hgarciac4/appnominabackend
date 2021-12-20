@@ -1,8 +1,8 @@
 const User = require("./model");
 
 const list = async(req, res) => {
-    const users = await User.find();
-    res.status(200).json({users})
+    const usuarios = await User.find();
+    res.status(200).json({usuarios})
 }
 
 const createUser = async(req, res) => {
@@ -23,7 +23,7 @@ const createUser = async(req, res) => {
 
         const newUser = new User(user);
         newUser.save().then((createdUser) => {
-            res.status(200).json({createUser});
+            res.status(200).json({user});
         });
     } else {
         res.status(400).json({error: "Usuario ya existe"});

@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const collection = "vacaciones";
 
 const userSchema = {
-    idVacaciones: {type: int, required: true},
+    idVacaciones: {type: Number, required: true},
     idUsuario: {type: mongoose.Schema.Types.ObjectId, ref: "users"},
     fechaInicio: {type: Date, required: true},
     fechaFin: {type: Date, required: true},
