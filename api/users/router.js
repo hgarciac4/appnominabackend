@@ -1,7 +1,7 @@
 const express = require("express");
 const {list, createUser} = require("./controller");
 
-const router = express().Router();
+const router = express.Router();
 
 router.route("/").get(list).post(createUser);
 
