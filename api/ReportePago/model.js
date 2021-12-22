@@ -3,11 +3,11 @@ const mongoose = require("mongoose");
 const collection = "reportepago";
 
 const userSchema = {
-    idReportePago: {type: int, required: true},
-    idUsuario: {type: mongoose.Schema.Types.ObjectId, ref: "users"},
+    año: {type: Number, required: true},
+    mes: {type: Number, required: true},
+    usuario: {type: mongoose.Schema.Types.ObjectId, ref: "users"},
     concepto: {type: String, required: true},
-    fecha: {type: Date, required: true},
-    valor: {type: Float32Array, required: true, default: 0}
+    valor: {type: Number, required: true}
 }
 
 const options = {
@@ -16,6 +16,6 @@ const options = {
 
 const schema = new mongoose.Schema(userSchema, options)
 
-const Vacaciones = mongoose.model(collection, schema);
+const ReportePago = mongoose.model(collection, schema);
 
-module.exports = Vacaciones;
+module.exports = ReportePago;
