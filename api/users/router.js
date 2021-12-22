@@ -1,8 +1,10 @@
 const express = require("express");
-const {list, createUser} = require("./controller");
+const {list, createUser, deleteUser, updateUser, listOne} = require("./controller");
 
 const router = express.Router();
 
 router.route("/").get(list).post(createUser);
 
-module.exports = router;
+router.route("/:id").get(listOne).put(updateUser).delete(deleteUser);
+
+module.exports = router; 

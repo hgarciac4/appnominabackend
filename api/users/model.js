@@ -10,7 +10,7 @@ const userSchema = {
     telefono: {type: Number},
     tipoUsuario: {type: String, required: true},
     fechaIng: {type: Date, required: true},
-    salario: {type: Number, required: true},
+    salario: {type: Number, required: true, default: 0}, 
     activo: {type: Boolean, required: true, default: true}
 }
 
